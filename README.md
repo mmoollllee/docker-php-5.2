@@ -23,7 +23,7 @@ version: '3'
 
 services:
   app:
-    image: deminy/php-5.2
+    image: mediengestalter/php-5.2-ioncube
     ports:
       - "80:80"
     volumes:
