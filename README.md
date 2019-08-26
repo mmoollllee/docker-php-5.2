@@ -8,7 +8,7 @@ Features:
     * Apache MPM Prefork
     * PHP 5.2.17 as apache mod
     * Zend Optimizer
-* Features added by Demin
+* Features added by [Demin](https://github.com/deminy/docker-php-5.2)
     * Enable PHP on the default site.
     * Allow [short open tag](http://php.net/manual/en/ini.core.php#ini.short-open-tag).
     * Various updates and fixes.
