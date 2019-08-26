@@ -63,7 +63,7 @@ RUN mkdir /php && \
     cd php-5.2.17; \
     wget -c -t 3 -O ./debian_patches_disable_SSLv2_for_openssl_1_0_0.patch https://bugs.php.net/patch-display.php\?bug_id\=54736\&patch\=debian_patches_disable_SSLv2_for_openssl_1_0_0.patch\&revision=1305414559\&download\=1 && \
     patch -p1 -b < debian_patches_disable_SSLv2_for_openssl_1_0_0.patch && \
-    
+
     # Build apache module
     ./configure \
         --bindir=/usr/bin \
@@ -165,7 +165,7 @@ RUN mkdir /php && \
     && \
     make && \
     make install && \
-    
+
     # Build cli
     ./configure \
         --bindir=/usr/bin \
@@ -276,6 +276,11 @@ RUN mkdir /php && \
     tar xzf ZendOptimizer-3.3.3-linux-glibc23-x86_64.tar.gz && \
     mkdir /usr/lib/php5.2/modules && \
     cp ZendOptimizer-3.3.3-linux-glibc23-x86_64/data/5_2_x_comp/ZendOptimizer.so /usr/lib/php5.2/modules/ && \
+
+    cd /php && \
+    wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz && \
+    tar -xvf ioncube_loaders_lin_x86* && \
+    cp ioncube/ioncube_loader_lin_5.2.so /usr/lib/php5.2/lib/extensions/no-debug-non-zts-20060613/ && \
 
     # Clean up
     rm -Rf /php && \
